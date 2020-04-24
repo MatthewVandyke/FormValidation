@@ -3,5 +3,15 @@ window.onload = function () {
     formBtn.onclick = main;
 };
 function main() {
-    alert("btn was clicked");
+    validateTxtInput("first-name", "please enter valid name");
+}
+function validateTxtInput(id, errMsg) {
+    var txtBox = document.getElementById(id);
+    var txtBoxValue = txtBox.value;
+    if (txtBoxValue == "" || txtBoxValue == null) {
+        var errSpan = txtBox.nextElementSibling;
+        errSpan.innerText = errMsg;
+        return false;
+    }
+    return true;
 }
