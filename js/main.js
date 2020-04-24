@@ -3,9 +3,10 @@ window.onload = function () {
     formBtn.onclick = main;
 };
 function main() {
-    validateTxtInput("first-name", "please enter valid name");
+    isTextPresent("first-name", "First name is required");
+    isTextPresent("last-name", "Last name is required");
 }
-function validateTxtInput(id, errMsg) {
+function isTextPresent(id, errMsg) {
     var txtBox = document.getElementById(id);
     var txtBoxValue = txtBox.value;
     if (txtBoxValue == "" || txtBoxValue == null) {

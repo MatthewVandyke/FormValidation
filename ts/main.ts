@@ -5,10 +5,16 @@ window.onload = function():void{
 }
 
 function main():void{
-    validateTxtInput("first-name", "please enter valid name");
+    isTextPresent("first-name", "First name is required");
+    isTextPresent("last-name", "Last name is required");
 }
-
-function validateTxtInput(id:string, errMsg:string):boolean {
+/**
+ * Returns true if the textbox with the given id
+ * has some text inside of it
+ * @param id The id of the <input type="text"> to validate
+ * @param errMsg The message to display in the sibling span of the text box
+ */
+function isTextPresent(id:string, errMsg:string):boolean {
     let txtBox: HTMLInputElement = <HTMLInputElement>document.getElementById(id);
     let txtBoxValue: string = txtBox.value;
     if (txtBoxValue == "" || txtBoxValue == null) {
